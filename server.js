@@ -46,7 +46,9 @@ passport.deserializeUser(function (id, done) {
     done(err, user);
   });
 });
-
+app.get("/", (req, res)=> {
+    res.redirect("/home")
+})
 app.get("/home", (req, res) => {
   console.log(req.isAuthenticated());
   if (req.isAuthenticated()) {
