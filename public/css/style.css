@@ -1,0 +1,43 @@
+:root{
+    --black: #231E23;
+    --green: #39A6A3;
+    --light-green: #DEEEEA;
+    --pink: #BF1363;
+    --red: #D83A56;
+    --light-grey: #393E46;
+}
+
+body{
+    background-color: var(--light-grey);
+ 
+}
+h1{
+    color: #00ADB5
+}
+textarea{
+    width:100%
+}
+.hidden{
+  display: none;
+
+}
+
+.red-alert{
+    color: var(--red);
+  
+}
+
+.card-body{
+    background-color:var(--light-green);
+}
+.btn{
+    background-color:var(--light-grey);
+    color: white;
+    transition: 0.3s;
+
+}
+.btn:hover{
+    background-color:var(--green);
+    color: white;
+    transition: 0.3s;
+}
