@@ -41,3 +41,6 @@ textarea{
     color: white;
     transition: 0.3s;
 }
+.full-height{
+    height:98vh;
+}

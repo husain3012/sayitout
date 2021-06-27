@@ -5,15 +5,15 @@
 
   <h1>Read what people secretly confessed to you :)</h1>
   <% confessions.reverse().forEach(confession=>{ %>
-    <div>
+  <div class="card m-2">
+    <div class="card-body">
       <p><%= confession.msg %></p>
     </div>
-    <% }) %>
-  <% }else{ %> 
-<h1>It's lonely here :( </h1>
-<% } %> 
-<p>Share this URL to your friends: <a href="http://localhost:3000/post/<%=username %>">http://localhost:3000/post/<%= username %></a></p>
-
+  </div>
+  <% }) %> <% }else{ %>
+  <h1>It's lonely here :(</h1>
+  <% } %>
+  <p>Share this URL to your friends: <a href="http://localhost:3000/post/<%=username %>">http://localhost:3000/post/<%= username %></a></p>
 </div>
 
 <%- include('partials/footer') %>

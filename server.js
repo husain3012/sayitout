@@ -8,6 +8,7 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const findOrCreate = require("mongoose-findorcreate");
+const e = require("express");
 const app = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -122,7 +123,10 @@ app.post("/confess", (req, res) => {
   let toUser = req.body.toUser;
   confessionMsg = req.body.confession;
   User.findOne({ username: toUser }, (foundUser) => {
-    return foundUser;
+      if(foundUser!=null){
+        return foundUser;
+
+      }
   }).then((foundUser) => {
     console.log(foundUser);
     confession = {
@@ -145,8 +149,16 @@ app.get("/logout", function (req, res) {
 
 app.get("/post/:username", (req, res) => {
   let username = req.params.username;
+  User.findOne({username: username}, (err, user) => {
+      if(!err && user!=null){
+        res.render("confess", { toUser: username });
 
-  res.render("confess", { toUser: username });
+      }
+      else{
+          res.render("404")
+      }
+  })
+
 });
 app.listen(3000, function () {
   console.log("Server started on port 3000");
