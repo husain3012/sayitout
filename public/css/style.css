@@ -37,11 +37,16 @@ textarea {
   font-size: 1.7rem;
   margin-left: 10px;
 }
-.navbar-hr {
+hr.navbar-hr{
+    border: none;
   height: 2px;
+  width:100%;
   margin: 0 auto;
+ 
   background-color: var(--blue2);
 }
+
+
 .hidden {
   display: none;
 }
