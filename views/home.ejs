@@ -16,7 +16,7 @@
   <div class="d-flex justify-content-between animate__animated animate__fadeIn card-body confession">
     <p><%= confession.msg %></p>
     <div class="reaction-buttons">
-      <form action="/post/delete" method="POST">
+      <form action="/post/delete" method="POST" onsubmit="return confirmDelete()">
         
         <input type="hidden" value="<%= confession.date %>" name="confessionId">
       <button class="btn" type="submit" href=""><i class="fas fa-trash"></i></button>
