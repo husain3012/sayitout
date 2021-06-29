@@ -92,7 +92,12 @@ app.post("/register", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.render("login", { failed: false });
+  if(req.isAuthenticated()) {
+    res.redirect("/");
+  }else{
+    res.render("login", { failed: false });
+
+  }
 });
 
 app.get("/login-failed", (req, res) => {
@@ -106,19 +111,24 @@ app.get("/register-failed", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  const user = new User({
-    username: req.body.username,
-    password: req.body.password,
-  });
-  req.login(user, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      passport.authenticate("local", { failureRedirect: "/login-failed" })(req, res, function () {
-        res.redirect("/home");
-      });
-    }
-  });
+  
+  
+    const user = new User({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    req.login(user, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        passport.authenticate("local", { failureRedirect: "/login-failed" })(req, res, function () {
+          res.redirect("/home");
+        });
+      }
+    });
+
+  
+ 
 });
 
 app.post("/confess", (req, res) => {

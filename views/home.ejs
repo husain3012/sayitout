@@ -2,18 +2,35 @@
 
 <div class="container">
   <% if(confessions.length>0){ %>
+  <div class="home-head">
+    <h1>Read what people secretly confessed to you :)</h1>
 
-  <h1>Read what people secretly confessed to you :)</h1>
+    <a id="logout-btn" class="animate__animated animate__slideInRight animate__delay-2s btn content-justify-end" href="/logout"><i class="fas fa-sign-out-alt"></i> </a>
+  </div>
+  <script>
+    AOS.init();
+  </script>
+
   <% confessions.reverse().forEach(confession=>{ %>
-  <div class="card m-2">
-    <div class="card-body">
-      <p><%= confession.msg %></p>
+
+  <div class="d-flex justify-content-between animate__animated animate__fadeIn card-body confession">
+    <p><%= confession.msg %></p>
+    <div class="reaction-buttons">
+      <a href=""><i class="fas fa-trash"></i></a>
     </div>
   </div>
+
   <% }) %> <% }else{ %>
   <h1>It's lonely here :(</h1>
   <% } %>
-  <p>Share this URL to your friends: <a id="post-url-self" href=""><%= username %></a></p>
+
+  <div class="share-url">
+    <p>Share this URL to your friends: <a id="post-url-self" href=""><%= username %></a></p>
+    <div class="d-flex social-share">
+      <a id="share-via-whatsapp" href="#" data-action="share/whatsapp/share"><h3 class="fab fa-whatsapp"></h3></a>
+      <a id="share-via-facebook" href="#"><h3 class="fab fa-facebook"></h3></a>
+    </div>
+  </div>
 </div>
 
 <%- include('partials/footer') %>
