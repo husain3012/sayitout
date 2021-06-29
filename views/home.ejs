@@ -13,7 +13,7 @@
   <% }) %> <% }else{ %>
   <h1>It's lonely here :(</h1>
   <% } %>
-  <p>Share this URL to your friends: <a href="http://localhost:3000/post/<%=username %>">http://localhost:3000/post/<%= username %></a></p>
+  <p>Share this URL to your friends: <a id="post-url-self" href="<%=username %>"><%= username %></a></p>
 </div>
 
 <%- include('partials/footer') %>

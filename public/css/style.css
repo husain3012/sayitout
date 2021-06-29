@@ -5,17 +5,38 @@
     --pink: #BF1363;
     --red: #D83A56;
     --light-grey: #393E46;
+    --blue0: #E8F0F2;
+    --blue1: #A2DBFA;
+    --blue2: #39A2DB;
+    --blue3: #053742;
 }
 
 body{
-    background-color: var(--light-grey);
+    background-color: var(--blue0);
  
 }
 h1{
-    color: #00ADB5
+    color: var(--blue2);
 }
 textarea{
     width:100%
+}
+.navbar{
+    background-color:var(--blue0);
+    
+}
+.navbar-brand{
+    font-family: 'Nothing You Could Do', cursive;
+    color: var(--blue2);
+    font-weight: 900;
+    font-size:2rem;
+
+    
+}
+.navbar-hr{
+    height: 2px;
+    margin: 0 auto;
+    background-color: var(--blue2)
 }
 .hidden{
   display: none;
