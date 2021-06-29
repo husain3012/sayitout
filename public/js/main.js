@@ -13,7 +13,7 @@ if (Math.floor(Math.random() * 2)) {
     let pickupline = pickuplines[Math.floor(Math.random() *pickuplines.length)]
     let title = pickupline.data.title;
     let selfText = pickupline.data.selftext;
-$("#confession").val(title+",  "+selfText)
+$("#confession").val(title+"  "+selfText)
 
 })
 }else{
