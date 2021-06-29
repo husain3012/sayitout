@@ -76,6 +76,17 @@ hr.navbar-hr{
   color: white;
   transition: 0.3s;
 }
+.reaction-buttons button.btn{
+    background-color:transparent;
+    color: black;
+    transition: 0.2s;
+    
+}
+.reaction-buttons button.btn:hover{
+    color: var(--red);
+    transition: 0.2s;
+}
+
 .full-height {
   height: 98vh;
 }
