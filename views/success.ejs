@@ -2,15 +2,17 @@
 
 
 <div class=" container mt-5">
-    <h1 id="message-send-confirmation" class="animate__animated animate__fadeInRight">Message sent successfully</h1> 
+    <h1 id="message-send-confirmation" class="animate__animated animate__fadeIn">Message sent successfully</h1> 
 </div>
 <script type="text/JavaScript">
 
 document.getElementById("message-send-confirmation").addEventListener('animationend', ()=>{
-    document.getElementById("message-send-confirmation").classList.add("animate__delay-1s animate__fadeOutLeft")
+    document.getElementById("message-send-confirmation").classList.remove("animate__fadeIn")
+
+    document.getElementById("message-send-confirmation").classList.add("animate__fadeOutRight")
 })
  setTimeout(function () {
-       window.location.href = "/"; //will redirect to your blog page (an ex: blog.html)
+       window.location.href = "/"; 
     }, 3000);
 </script>
 <%- include('partials/footer') %>
