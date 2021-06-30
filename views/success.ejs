@@ -7,10 +7,10 @@
 <script type="text/JavaScript">
 
 document.getElementById("message-send-confirmation").addEventListener('animationend', ()=>{
-    document.getElementById("message-send-confirmation").classList.add("animate__fadeOutLeft")
+    document.getElementById("message-send-confirmation").classList.add("animate__delay-2s animate__fadeOutLeft")
 })
  setTimeout(function () {
        window.location.href = "/"; //will redirect to your blog page (an ex: blog.html)
-    }, 5000);
+    }, 3000);
 </script>
 <%- include('partials/footer') %>
