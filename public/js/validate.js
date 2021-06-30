@@ -22,12 +22,25 @@ function validateForm() {
 
 
 function characterCheck(string){
+  function space(str){
+    if(str.indexOf(' ') >= 0){
+      return false;
+  }
+  else{
+    return true;
+  }
+
+  }
+
     var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
 
     if(format.test(string)){
       return false;
-    } else {
+    } else if(space(string)){
       return true;
+    }
+    else{
+      return false;
     }
     
 }
