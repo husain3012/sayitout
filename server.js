@@ -60,8 +60,7 @@ app.get("/home", (req, res) => {
         console.log(user.confessions.length);
         return user;
       }
-    })
-    .then((user) => {
+    }).then((user) => {
       console.log(user);
 
       res.render("home", { confessions: user.confessions, username: user.username });
@@ -132,7 +131,6 @@ app.post("/confess", (req, res) => {
     confession = {
       msg: confessionMsg,
       date: Date.now(),
-     
     };
     foundUser.confessions.push(confession);
     foundUser.save((err) => {
@@ -144,35 +142,31 @@ app.post("/confess", (req, res) => {
 });
 
 app.post("/post/delete", (req, res) => {
-
   let username = req.user.username;
-  console.log(username + " is triyntto feete")
   let id = req.body.confessionId;
   let newConfessions = [];
   User.findOne({ username: username }, (foundUser) => {
-    if(foundUser){
+    if (foundUser) {
       return foundUser;
-    }else{
-      console.log(foundUser)
+    } else {
+      console.log(foundUser);
     }
-   
-  })
-  .then((foundUser) => {
+  }).then((foundUser) => {
     let len = foundUser.confessions.length;
     for (i = 0; i < len; i++) {
-      if (foundUser.confessions[i].date!= id) {
+      if (foundUser.confessions[i].date != id) {
         newConfessions.push(foundUser.confessions[i]);
       }
     }
     foundUser.confessions = newConfessions;
-    foundUser.save(err=>{
-      if(!err) {
-        res.redirect("/home")
-      }else{
+    foundUser.save((err) => {
+      if (!err) {
+        res.redirect("/home");
+      } else {
         res.send(err);
       }
-    })
-  })
+    });
+  });
 });
 
 app.get("/logout", function (req, res) {
@@ -182,13 +176,17 @@ app.get("/logout", function (req, res) {
 
 app.get("/post/:username", (req, res) => {
   let username = req.params.username;
-  User.findOne({ username: username }, (err, user) => {
-    if (!err && user != null) {
-      res.render("confess", { toUser: username });
-    } else {
-      res.render("404");
-    }
-  });
+  if (req.isAuthenticated()) {
+    res.redirect("/home");
+  } else {
+    User.findOne({ username: username }, (err, user) => {
+      if (!err && user != null) {
+        res.render("confess", { toUser: username });
+      } else {
+        res.render("404");
+      }
+    });
+  }
 });
 app.listen(process.env.PORT || 3000, function () {
   console.log("Server started on port 3000");
