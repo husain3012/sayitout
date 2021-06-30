@@ -50,18 +50,18 @@ app.get("/", (req, res) => {
   res.redirect("/home");
 });
 app.get("/home", (req, res) => {
-  console.log(req.isAuthenticated());
+
   if (req.isAuthenticated()) {
-    //   console.log(req.user)
+    
     User.findById(req.user.id, function (err, user) {
       if (err) {
-        console.log(err);
+      
       } else {
-        console.log(user.confessions.length);
+      
         return user;
       }
     }).then((user) => {
-      console.log(user);
+     
 
       res.render("home", { confessions: user.confessions, username: user.username });
     });
@@ -73,13 +73,13 @@ app.get("/home", (req, res) => {
 app.post("/register", (req, res) => {
   User.register({ username: req.body.username }, req.body.password, function (err, user) {
     if (err) {
-      console.log(err);
+   
       res.redirect("/register-failed");
     } else {
-      console.log(user);
+      
 
       passport.authenticate("local")(req, res, function () {
-        console.log(req);
+      
         res.redirect("/home");
       });
     }
@@ -149,7 +149,7 @@ app.post("/post/delete", (req, res) => {
     if (foundUser) {
       return foundUser;
     } else {
-      console.log(foundUser);
+      
     }
   }).then((foundUser) => {
     let len = foundUser.confessions.length;

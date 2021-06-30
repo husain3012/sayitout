@@ -6,6 +6,10 @@ function confirmDelete() {
   }
 }
 
+
+new ClipboardJS('#share-via-clipboard');
+
+
 if (Math.floor(Math.random() * 2)) {
  
   axios.get("https://www.reddit.com/r/pickuplines/top.json").then(response => {

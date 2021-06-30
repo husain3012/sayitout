@@ -17,10 +17,8 @@
     <p><%= confession.msg %></p>
     <div class="reaction-buttons">
       <form action="/post/delete" method="POST" onsubmit="return confirmDelete()">
-        
-        <input type="hidden" value="<%= confession.date %>" name="confessionId">
-      <button class="btn" type="submit" href=""><i class="fas fa-trash"></i></button>
-
+        <input type="hidden" value="<%= confession.date %>" name="confessionId" />
+        <button class="btn" type="submit" href=""><i class="fas fa-trash"></i></button>
       </form>
     </div>
   </div>
@@ -29,8 +27,14 @@
   <h1>It's lonely here :(</h1>
   <% } %>
 
+  <hr />
+
+  
   <div class="share-url">
-    <p>Share this URL to your friends: <a id="post-url-self" href=""><%= username %></a></p>
+    <p>Share this URL to your friends: <a id="post-url-self" href=""><%= username %></a>
+      <button data-clipboard-target="#post-url-self" style="background-color: transparent; color: inherit;" class="btn" id="share-via-clipboard" href=""><h3 class="far fa-clipboard"></h3> </button>
+    </p> 
+
     <div class="d-flex social-share">
       <a id="share-via-whatsapp" href="#" data-action="share/whatsapp/share"><h3 class="fab fa-whatsapp"></h3></a>
       <a id="share-via-facebook" href="#"><h3 class="fab fa-facebook"></h3></a>
