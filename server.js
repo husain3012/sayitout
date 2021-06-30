@@ -177,7 +177,20 @@ app.get("/logout", function (req, res) {
 app.get("/post/:username", (req, res) => {
   let username = req.params.username;
   if (req.isAuthenticated()) {
-    res.redirect("/home");
+    if(req.user.username === username) {
+      res.redirect("/home");
+    }
+    else{
+      User.findOne({ username: username }, (err, user) => {
+        if (!err && user != null) {
+          res.render("confess", { toUser: username });
+        } else {
+          res.render("404");
+        }
+      });
+
+    }
+    
   } else {
     User.findOne({ username: username }, (err, user) => {
       if (!err && user != null) {
