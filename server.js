@@ -137,7 +137,7 @@ app.post("/confess", (req, res) => {
     foundUser.confessions.push(confession);
     foundUser.save((err) => {
       if (!err) {
-        res.redirect("home");
+        res.render("success");
       }
     });
   });

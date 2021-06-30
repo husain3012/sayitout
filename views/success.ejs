@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+
+<div class=" container mt-5">
+    <h1 id="message-send-confirmation" class="animate__animated animate__delay-2s animate__fadeInRightBig">Message sent successfully</h1> 
+</div>
+<script type="text/JavaScript">
+
+document.getElementById("message-send-confirmation").addEventListener('animationend', ()=>{
+    document.getElementById("message-send-confirmation").classList.add("animate__fadeOutLeftBig")
+})
+ setTimeout(function () {
+       window.location.href = "/"; //will redirect to your blog page (an ex: blog.html)
+    }, 5000);
+</script>
+<%- include('partials/footer') %>
