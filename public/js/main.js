@@ -32,6 +32,7 @@ $("#confession").val(title+"  "+selfText)
 let originUrl = document.location.origin;
 
 let username = $("#post-url-self").text();
+username = encodeURIComponent(username);
 let url = originUrl + "/post/" + username;
 $("#post-url-self").text(url);
 $("#post-url-self").attr("href", url);
