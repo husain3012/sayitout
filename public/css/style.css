@@ -21,7 +21,8 @@ body {
   flex-direction: column;
 }
 h1 {
-  color: var(--blue2);
+  color: var(--blue3);
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 a {
@@ -67,7 +68,9 @@ hr.navbar-hr{
 .login-signup {
   background-image: url(../images//bg01.webp);
   background-size: cover;
-  max-width: 525px;
+  max-width: 526px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .btn {
   background-color: var(--blue2);
