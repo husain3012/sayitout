@@ -1,5 +1,5 @@
 function confirmDelete() {
-  if (!confirm("You sure want to delete this message?")) {
+  if (!confirm("Are you sure want to delete this message?")) {
     return false;
   } else {
     return true;
