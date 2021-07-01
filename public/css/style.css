@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200;1,400&display=swap');
 :root {
   --black: #231e23;
   --green: #39a6a3;
@@ -8,7 +11,7 @@
   --blue0: #e8f0f2;
   --blue1: #a2dbfa;
   --blue2: #39a2db;
-  --blue3: #053742;
+  --blue3: #1B98F5;
 }
 
 body {
@@ -18,14 +21,16 @@ body {
   flex-direction: column;
 }
 h1 {
-  color: var(--blue2);
-  font-family: "Open Sans", sans-serif;
+  color: var(--blue3);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 a {
   color: inherit;
 }
-textarea {
+form-control {
   width: 100%;
+  border-radius: 15px;
 }
 .navbar {
   background-color: var(--blue0);
@@ -60,9 +65,11 @@ hr.navbar-hr {
   background-color: #f4f9f9;
 }
 .login-signup {
-  background-image: url("/images/city-bg.jpg");
+  background-image: url(../images//bg01.webp);
   background-size: cover;
-  max-width: 480px;
+  max-width: 526px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .btn {
   background-color: var(--blue2);
@@ -75,14 +82,15 @@ hr.navbar-hr {
   color: white;
   transition: 0.3s;
 }
-.reaction-buttons button.btn {
-  background-color: transparent;
-  color: black;
-  transition: 0.2s;
+.reaction-buttons button.btn{
+    background-color:transparent;
+    color: var(--red);
+    transition: 0.2s;
+    
 }
-.reaction-buttons button.btn:hover {
-  color: var(--red);
-  transition: 0.2s;
+.reaction-buttons button.btn:hover{
+    color: black;
+    transition: 0.2s;
 }
 
 .full-height {
@@ -107,6 +115,7 @@ hr.navbar-hr {
 }
 
 #logout-btn {
+  color: #053742;
   position: fixed;
   z-index: 1200;
   right: 0;
@@ -116,7 +125,7 @@ hr.navbar-hr {
   opacity: 0.75;
 }
 .login-signup-btn a {
-  background-color: grey;
+    background-color: #120E43;
 }
 .vertical-line {
   margin: 0 1rem;
@@ -127,8 +136,8 @@ hr.navbar-hr {
 
 .share-url {
   background-color: white;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 15px;
+  padding: 11px;
   margin: 1rem auto;
 }
 .share-url .social-share a {
@@ -136,7 +145,7 @@ hr.navbar-hr {
 }
 
 .confession {
-  border-radius: 10px;
+  border-radius: 11px;
   margin: 1rem auto;
 }
 .confession p {
@@ -157,7 +166,7 @@ footer .dev-socials {
   max-width: 50ch;
 }
 footer .dev-socials a {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Roboto Mono', monospace;
   text-decoration: none;
   transition: 0.2s;
 }
@@ -166,7 +175,7 @@ footer .dev-socials a:hover {
   transition: 0.2s;
 }
 footer .copyright {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Roboto Mono', monospace;
   margin: auto;
   max-width: fit-content;
   margin-top: 1rem;
