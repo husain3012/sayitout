@@ -7,7 +7,15 @@ function confirmDelete() {
 }
 
 
-new ClipboardJS('#share-via-clipboard');
+let clipboard = new ClipboardJS('#share-via-clipboard');
+
+clipboard.on('success', function(e) {
+$("#clipboard-copied").removeClass("d-none");
+setTimeout(function() {
+$("#clipboard-copied").addClass("d-none");
+
+}, 1000)
+});
 
 
 if (Math.floor(Math.random() * 2)) {
@@ -38,3 +46,5 @@ $("#post-url-self").text(url);
 $("#post-url-self").attr("href", url);
 $("#share-via-whatsapp").attr("href", "https://api.whatsapp.com/send?text=" + url);
 $("#share-via-facebook").attr("href", "https://www.facebook.com/sharer/sharer.php?u=" + url);
+
+

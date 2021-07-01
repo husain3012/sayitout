@@ -37,15 +37,14 @@ textarea {
   font-size: 1.7rem;
   margin-left: 10px;
 }
-hr.navbar-hr{
-    border: none;
+hr.navbar-hr {
+  border: none;
   height: 2px;
-  width:100%;
+  width: 100%;
   margin: 0 auto;
- 
+
   background-color: var(--blue2);
 }
-
 
 .hidden {
   display: none;
@@ -76,15 +75,14 @@ hr.navbar-hr{
   color: white;
   transition: 0.3s;
 }
-.reaction-buttons button.btn{
-    background-color:transparent;
-    color: black;
-    transition: 0.2s;
-    
+.reaction-buttons button.btn {
+  background-color: transparent;
+  color: black;
+  transition: 0.2s;
 }
-.reaction-buttons button.btn:hover{
-    color: var(--red);
-    transition: 0.2s;
+.reaction-buttons button.btn:hover {
+  color: var(--red);
+  transition: 0.2s;
 }
 
 .full-height {
@@ -118,7 +116,7 @@ hr.navbar-hr{
   opacity: 0.75;
 }
 .login-signup-btn a {
-    background-color:grey;
+  background-color: grey;
 }
 .vertical-line {
   margin: 0 1rem;
@@ -141,11 +139,10 @@ hr.navbar-hr{
   border-radius: 10px;
   margin: 1rem auto;
 }
-.confession p{
-    max-width: 75%;
+.confession p {
+  max-width: 75%;
 }
-.confession .reaction-buttons{
-    
+.confession .reaction-buttons {
 }
 
 footer {
@@ -167,11 +164,23 @@ footer .dev-socials a {
 footer .dev-socials a:hover {
   color: var(--blue1);
   transition: 0.2s;
-
 }
 footer .copyright {
   font-family: "Open Sans", sans-serif;
   margin: auto;
   max-width: fit-content;
   margin-top: 1rem;
+}
+/* ______________ */
+
+#clipboard-copied {
+  position: absolute;
+  z-index: 1200;
+  width: fit-content;
+  background-color: var(--blue3);
+  font-size: 12px;
+  padding: 2px;
+  border-radius: 10px;
+  opacity: 0.75;
+  color: white;
 }

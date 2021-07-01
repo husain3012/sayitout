@@ -7,9 +7,7 @@
 
     <a id="logout-btn" class="animate__animated animate__slideInRight animate__delay-2s btn content-justify-end" href="/logout"><i class="fas fa-sign-out-alt"></i> </a>
   </div>
-  <script>
-    AOS.init();
-  </script>
+
 
   <% confessions.reverse().forEach(confession=>{ %>
 
@@ -32,6 +30,8 @@
   
   <div class="share-url">
     <p>Share with your friends: <a id="post-url-self" href=""><%= username %></a>
+      <div class="d-none animate__animated animate__fadeIn" id="clipboard-copied">Copied!</div>
+
       <button data-clipboard-target="#post-url-self" style="background-color: transparent; color: inherit;" class="btn" id="share-via-clipboard" href=""><h3 class="far fa-clipboard"></h3> </button>
     </p> 
 
