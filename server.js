@@ -11,6 +11,7 @@ const findOrCreate = require("mongoose-findorcreate");
 const e = require("express");
 const app = express();
 
+const port = process.env.PORT || 3000;
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,6 +25,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 mongoose.connect("mongodb+srv://admin-husain:" + process.env.ATLASPW + "@cluster0.ouw0w.mongodb.net/SayItOut?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: true });
+
 
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true },
@@ -201,6 +203,6 @@ app.get("/post/:username", (req, res) => {
     });
   }
 });
-app.listen(process.env.PORT || 3000, function () {
-  console.log("Server started on port 3000");
+app.listen(port, function () {
+  console.log("Server started on port" + port);
 });
