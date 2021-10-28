@@ -24,7 +24,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-mongoose.connect("mongodb+srv://admin-husain:" + process.env.ATLASPW + "@cluster0.ouw0w.mongodb.net/SayItOut?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: true });
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: true });
 
 
 const userSchema = new mongoose.Schema({
