@@ -1,7 +1,7 @@
 # sayitout  
 An anonymous confession website, built using Node.js and mongoDB  
 
-Hosted at sayitout.tk  
+Hosted [here](https://www.sayitout.tk/)
 
 ## TO run Locally  
 ```git clone git@github.com:husain3012/sayitout.git```  
